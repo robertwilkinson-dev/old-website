@@ -1,95 +1,158 @@
 import Image from "next/image";
+import Head from "next/head";
 import styles from "./page.module.css";
+
+const socials = [
+  {
+    id: 'email',
+    name: 'Email',
+    logo: '/socials/email.svg',
+    link: 'mailto:robert@robertwilkinson.dev'
+  },
+  {
+    id: 'linkedin',
+    name: 'LinkedIn',
+    logo: '/socials/linkedin.svg',
+    link: 'https://www.linkedin.com/in/robert-wilkinson-3421a0166/'
+  }
+]
+
+const skills = [
+  {
+    id: 'react',
+    name: 'React JS',
+    logo: '/skills/react.png'
+  },
+  {
+    id: 'redux',
+    name: 'Redux',
+    logo: '/skills/redux.png'
+  },
+  {
+    id: 'next',
+    name: 'Next JS',
+    logo: '/skills/next.png'
+  },
+  {
+    id: 'node',
+    name: 'Node JS',
+    logo: '/skills/node.png'
+  },
+  {
+    id: 'express',
+    name: 'Express JS',
+    logo: '/skills/express.png'
+  },
+  {
+    id: 'html',
+    name: 'HTML',
+    logo: '/skills/html.png'
+  },
+  {
+    id: 'css',
+    name: 'CSS',
+    logo: '/skills/css.png'
+  },
+  {
+    id: 'sass',
+    name: 'Sass',
+    logo: '/skills/sass.png'
+  },
+  {
+    id: 'python',
+    name: 'Python 3',
+    logo: '/skills/python.png'
+  },
+  {
+    id: 'expo',
+    name: 'Expo',
+    logo: '/skills/expo.png'
+  },
+  {
+    id: 'native',
+    name: 'Native',
+    logo: '/skills/react.png'
+  },
+]
+
+const tools = [
+  {
+    id: 'git',
+    name: 'Git',
+    logo: '/skills/git.png'
+  },
+  {
+    id: 'vs-code',
+    name: 'VS Code',
+    logo: '/skills/vscode.png'
+  },
+  {
+    id: 'photoshop',
+    name: 'Photoshop',
+    logo: '/skills/photoshop.png'
+  },
+  {
+    id: 'Premiere',
+    name: 'Premiere',
+    logo: '/skills/premiere.png'
+  },
+]
+
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+    <div className={styles.container}>
+      <Head>
+        <title>Robert Wilkinson</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+
+      <div className={styles.bio}>
+        <h1 className={styles.bioHeading}>Robert Wilkinson</h1>
+        <p className={styles.bioText}>Hi I&apos;m, Robert</p>
+        <p className={styles.bioText}>I create websites and web based applications, Projects I&apos;ve worked on have been on display at the UKs largest health organisation and IS Europe</p>
+
+        <div className={styles.socials}>
+          {socials.map((s, i) =>  (
+            <div key={i} className={styles.socialItem} id={s.id} >
+              <p ><a href={s.link}>{s.name}</a></p>
+            </div>
+          ))}
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+
+
+      <div className={styles.skillsAndTools}>
+        <div className={styles.skillsContainer}>
+          <h3 className={styles.skillsHeading} >Here are some of my favorite technologies:</h3>
+
+          <div className={styles.skills}>
+
+            { skills.map((s, i) => (
+              <div key={i} className={styles.skill}>
+                <Image className={styles.skillLogo} src={s.logo} alt={s.name} />
+                <p className={styles.skillName}>{s.name}</p>
+              </div>
+            ))}
+          </div> 
+        </div>
+
+        <div className={styles.skillsContainer}>
+          <h3 className={styles.skillsHeading}>Some of my favorite tools:</h3>
+
+          <div className={styles.skills}>
+
+            {tools.map((s, i) => (
+              <div key={i} className={styles.skill}>
+                <Image className={styles.skillLogo} src={s.logo} alt={s.name} />
+                <p className={styles.skillName}>{s.name}</p>
+              </div>
+            ))}
+          </div> 
+        </div> 
+      </div>
     </div>
-  );
+  )
 }
