@@ -1,0 +1,150 @@
+.container {
+  display: flex;
+  
+  flex-direction: row;
+
+  background: #f1f1f1;
+  min-height: 100vh;
+
+  @media (max-width: 1260px) {
+    display: block;
+  }
+
+}
+
+.bio {
+  background: #121212;
+  width: 40%;
+  padding: 10em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  font-family: 'Lexend', sans-serif;
+
+  @media (max-width: 1260px) {
+    width: 100%;
+    padding: 5rem;
+  }
+  
+
+}
+
+.bioHeading {
+  font-size: 3.5rem;
+  color: #f1f1f1;
+
+}
+
+.bioText {
+  font-size: 1.5rem;
+  color: #f1f1f1;
+  margin: .7rem 0;
+
+}
+
+.socials {
+  display: block;
+  margin: 2rem 0 0 0;
+
+}
+
+.socialItem {
+  display: block;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+}
+
+.socialItem p {
+  font-size: 1.5rem;
+  color: #f1f1f1;
+  margin: .7rem 0;
+  font-weight: 600;
+
+}
+
+.socialItem p a {
+  text-decoration: none;
+  color: #f1f1f1;
+
+}
+
+.skillsAndTools {
+  display: flex;
+  flex: 1;
+  
+  flex-direction: column;
+
+  justify-content: center;
+  
+}
+
+.skillsContainer {
+  display: flex;
+  // flex: 1;
+
+  flex-direction: column;
+
+  font-family: 'Lexend', sans-serif;
+  padding: 5rem;
+
+  @media (max-width: 1260px) {
+    width: 100%;
+    padding: 3rem;
+  }
+   
+}
+
+.skillsHeading {
+  align-self: flex-start;
+  justify-self: flex-start;
+
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
+
+}
+
+.skills {
+  display: flex;
+
+  align-items: center;
+  flex-direction: row;
+
+  flex-wrap: wrap;
+
+  @media (max-width: 620px) {
+    justify-content: space-between;
+  }
+  
+}
+
+.skill {
+  padding: 2rem;
+  margin: 1rem;
+  min-width: 12rem;
+
+  align-self: flex-start;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+}
+
+.skillLogo {
+  width: 7rem;
+  height: auto;
+  margin-bottom: 3px;
+
+}
+
+.skillName {
+  margin: 0;
+  font-size: 1.5rem;
+}

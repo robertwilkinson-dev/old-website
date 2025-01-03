@@ -1,6 +1,5 @@
-import Image from "next/image";
 import Head from "next/head";
-import styles from "./page.module.css";
+import styles from "./Home.module.scss";
 
 const socials = [
   {
@@ -132,7 +131,7 @@ export default function Home() {
 
             { skills.map((s, i) => (
               <div key={i} className={styles.skill}>
-                <Image className={styles.skillLogo} src={s.logo} alt={s.name} />
+                <img className={styles.skillLogo} src={s.logo} alt={s.name} />
                 <p className={styles.skillName}>{s.name}</p>
               </div>
             ))}
@@ -146,7 +145,7 @@ export default function Home() {
 
             {tools.map((s, i) => (
               <div key={i} className={styles.skill}>
-                <Image className={styles.skillLogo} src={s.logo} alt={s.name} />
+                <img className={styles.skillLogo} src={s.logo} alt={s.name} />
                 <p className={styles.skillName}>{s.name}</p>
               </div>
             ))}
